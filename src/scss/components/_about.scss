@@ -18,7 +18,6 @@
   &__container {
     position: relative;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 6rem 0;
@@ -44,7 +43,6 @@
     width: 50%;
     padding: 1rem;
   }
-  &__paragraph-1 {}
   &__paragraph-2 {
     margin: 1rem 0;
   }
@@ -53,9 +51,11 @@
   &__btn:visited,
   &__btn:active {
     @include btnStyling;
+    animation: bounce .9s linear 1s infinite;
     &:hover {
       cursor: pointer;
       transform: translateY(-.2rem);
+      animation: none;
     }
   }
   &__skills {

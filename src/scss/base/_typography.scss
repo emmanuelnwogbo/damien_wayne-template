@@ -55,3 +55,24 @@ body {
     font-size: 125%;
   }
 }
+
+.blog {
+  &__header {
+    font-size: 240%;
+    font-weight: 500;
+    &-sub {
+      font-size: 140%;
+      font-weight: 400;
+    }
+  }
+  &__card-details {
+    font-size: 80%;
+  }
+  &__card-btn,
+  &__card-btn:link,
+  &__card-btn:visited,
+  &__card-btn:active {
+    font-weight: 500;
+    font-size: 85%;
+  }
+}

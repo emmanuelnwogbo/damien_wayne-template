@@ -40,6 +40,7 @@
     right: 0;
     display: flex;
     list-style: none;
+    z-index: 9500;
   }
   &__list-item {
     position: relative;
@@ -139,7 +140,7 @@
     @include btnStyling;
     margin-top: 1rem;
     transition: $primary-transition;
-    animation: moveInBottom 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: bounce .9s linear 1s infinite;
     &::after {
       position: absolute;
       content: '';
@@ -156,6 +157,7 @@
     &:hover {
       cursor: pointer;
       transform: translateY(-.3rem);
+      animation: none;
     }
     &:hover::after {
       animation: btnHoverAnimation .4s cubic-bezier(0.165, 0.84, 0.44, 1);
