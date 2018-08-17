@@ -3,10 +3,20 @@
   width: 100vw;
   height: 100vh;
   color: $color-grey-light-1;
-  background: linear-gradient(to right bottom, rgba(45, 52, 54, .9), rgba(44, 62, 80, .8)), url(.././imgs/desktop.jpg);
+  background: linear-gradient(to right bottom, rgba(45, 52, 54, 1), rgba(44, 62, 80, .9)), url(.././imgs/desktop2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow: hidden;
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8000;
+  }
+  &__checkbox:checked~&>&__container>&__intro {
+    transform: translateY(-200%);
+  }
   &__container {
     position: relative;
     width: 80%;
@@ -16,9 +26,13 @@
   }
   &__title {
     position: absolute;
-    top: 7%;
+    top: 3%;
     left: 0;
     cursor: pointer;
+    transition: $primary-transition;
+    &:hover {
+      transform: translateY(-.2rem);
+    }
   }
   &__list {
     position: absolute;
@@ -73,7 +87,8 @@
   }
   &__list-link,
   &__list-link:link,
-  &__list-link:visited {
+  &__list-link:visited,
+  &__list-link:active {
     text-decoration: none;
     display: inline-block;
     color: $color-grey-light-1;
@@ -83,6 +98,7 @@
     align-self: center;
     text-align: center;
     margin-top: 13rem;
+    transition: $sec-transition;
   }
   &__intro-photo {
     position: relative;
@@ -107,8 +123,8 @@
   }
   &__intro-icon {
     fill: $color-grey-light-1;
-    height: .7rem;
-    width: .7rem;
+    height: .9rem;
+    width: .9rem;
     margin: 0 .9rem;
     transition: $primary-transition;
     &:hover {
@@ -118,22 +134,10 @@
   }
   &__intro-btn,
   &__intro-btn:link,
-  &__intro-btn:visited {
-    position: relative;
-    text-decoration: none;
-    text-align: center;
+  &__intro-btn:visited,
+  &__intro-btn:active {
+    @include btnStyling;
     margin-top: 1rem;
-    padding: .5rem 1.5rem;
-    border-radius: 3rem;
-    background: transparent;
-    color: $color-grey-light-1;
-    outline: none;
-    border-radius: 3rem;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    border: 1px solid $color-grey-light-1;
-    box-shadow: $box-shadow;
     transition: $primary-transition;
     animation: moveInBottom 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     &::after {

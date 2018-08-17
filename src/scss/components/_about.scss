@@ -1,0 +1,96 @@
+.about {
+  position: absolute;
+  width: 100vw;
+  top: 100%;
+  left: 0;
+  z-index: 9000;
+  transition: $sec-transition;
+  color: $color-grey-light-1;
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    z-index: 8000;
+  }
+  &__checkbox:checked~& {
+    transform: translateY(-120%);
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 0;
+  }
+  &__header {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: .2rem 0;
+    &-sub {
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 1rem auto;
+  }
+  &__bio {
+    width: 50%;
+    padding: 1rem;
+  }
+  &__paragraph-1 {}
+  &__paragraph-2 {
+    margin: 1rem 0;
+  }
+  &__btn,
+  &__btn:link,
+  &__btn:visited,
+  &__btn:active {
+    @include btnStyling;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-.2rem);
+    }
+  }
+  &__skills {
+    position: relative;
+    width: 50%;
+    padding: 1rem;
+  }
+  &__skills-header {
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+  }
+  &__email {
+    margin: .7rem 0;
+  }
+  &__email-icon {
+    height: 1rem;
+    width: 1rem;
+    fill: $color-grey-light-1;
+  }
+  &__skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: baseline;
+  }
+  &__skills {
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__skills-item {
+    padding: 0;
+    margin: 1rem .9rem
+  }
+  &__skills-icon {
+    height: 4rem;
+    width: 4rem
+  }
+}

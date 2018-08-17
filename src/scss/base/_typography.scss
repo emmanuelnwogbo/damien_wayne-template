@@ -7,8 +7,8 @@ body {
 
 .header {
   &__title {
-    font-size: 140%;
-    font-weight: 500
+    font-size: 150%;
+    font-weight: 500;
   }
   &__intro-name {
     font-size: 400%;
@@ -18,14 +18,40 @@ body {
     font-size: 125%;
     animation: moveInRight 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  &__list-link {
+  &__list-link,
+  &__list-link:link,
+  &__list-link:visited,
+  &__list-link:active {
     font-weight: 500;
-    font-size: 80%;
+    font-size: 77%;
   }
   &__intro-btn,
   &__intro-btn:link,
-  &__Intro-btn:visited {
+  &__intro-btn:visited,
+  &__intro-btn:active {
     font-weight: 500;
     font-size: 80%;
+  }
+}
+
+.about {
+  &__header {
+    font-size: 240%;
+    font-weight: 500;
+    &-sub {
+      font-size: 140%;
+      font-weight: 400;
+    }
+  }
+  &__btn,
+  &__btn:link,
+  &__btn:visited,
+  &__btn:active {
+    font-weight: 500;
+    font-size: 80%;
+  }
+  &__skills-header {
+    font-weight: 500;
+    font-size: 125%;
   }
 }
