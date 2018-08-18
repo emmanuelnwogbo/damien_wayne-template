@@ -1,0 +1,126 @@
+.contact {
+  position: absolute;
+  width: 100vw;
+  top: 15%;
+  left: 0;
+  z-index: 9000;
+  transition: $sec-transition;
+  color: $color-grey-light-1;
+  transform: translateY(200%);
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    z-index: 9900;
+  }
+  &__checkbox:checked~& {
+    transform: translateY(0%);
+  }
+  &__checkbox:checked~.blog {
+    transform: translateY(-200%);
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 0;
+    transform: translateY(-6rem);
+  }
+  &__header {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: .2rem 0;
+    text-transform: uppercase;
+  }
+  &__content {
+    width: 70%;
+    margin: 1rem auto;
+    overflow: hidden;
+  }
+  &__form {
+    width: 100%;
+  }
+  &__form-group {
+    margin: .8rem auto;
+    border-radius: .3rem;
+    width: 60%;
+  }
+  &__form-group-description {
+    position: relative;
+    height: 12rem;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-grey-light-2, .5);
+    }
+  }
+  &__form-input {
+    height: 3rem;
+    padding: .8rem;
+    width: 100%;
+    font-family: inherit;
+    color: #000;
+    border-radius: 2px;
+    background-color: rgba($color-grey-light-2, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    transition: all .3s;
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid #eb4d4b;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-black;
+    }
+  }
+  &__form-textarea {
+    position: absolute;
+    font-family: inherit;
+    color: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    padding: .8rem;
+    width: 100%;
+    z-index: 5000;
+    resize: none;
+    display: block;
+    background: transparent;
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid #eb4d4b;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-black;
+    }
+  }
+  &__form-btn,
+  &__form-btn:link,
+  &__form-btn:visited,
+  &__form-btn:active {
+    @include btnStyling;
+    animation: bounce .9s linear 1s infinite;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-.2rem);
+      animation: none;
+    }
+  }
+}

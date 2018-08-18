@@ -79,3 +79,16 @@ body {
     font-size: 85%;
   }
 }
+
+.contact {
+  &__header {
+    font-size: 240%;
+    font-weight: 500;
+  }
+  &__form-input {
+    font-size: .8rem;
+  }
+  &__form-textarea {
+    font-size: .8rem;
+  }
+}
