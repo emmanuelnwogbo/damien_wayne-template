@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 8000;
+    z-index: 9900;
   }
   &__checkbox:checked~&>&__container>&__intro {
     transform: translateY(-200%);

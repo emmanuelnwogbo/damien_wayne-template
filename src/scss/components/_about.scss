@@ -10,7 +10,7 @@
     position: absolute;
     top: 0;
     left: 2%;
-    z-index: 8000;
+    z-index: 9900;
   }
   &__checkbox:checked~& {
     transform: translateY(-120%);
@@ -27,6 +27,7 @@
     margin: 0 auto;
     text-align: center;
     padding: .2rem 0;
+    text-transform: uppercase;
     &-sub {
       width: 70%;
       text-align: center;
