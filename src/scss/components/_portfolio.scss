@@ -1,0 +1,182 @@
+.portfolio {
+  //position: absolute;
+  width: 100vw; //top: 100%;
+  //left: 0;
+  z-index: 9000;
+  transition: $sec-transition;
+  color: $color-white;
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 8%;
+    z-index: 9900;
+  }
+  &__checkbox:checked~& {
+    transform: translateY(0%);
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 0;
+    transform: translateY(-2rem);
+  }
+  &__header {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: .2rem 0;
+    text-transform: uppercase;
+    &-sub {
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  &__categories {
+    display: flex;
+    width: 70%;
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__categories-item {
+    position: relative;
+    margin: 0 1.5rem;
+    padding: 1.5rem 0;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    transition: $primary-transition;
+  }
+  &__categories-link,
+  &__categories-link:link,
+  &__categories-link:visited,
+  &__categories-link:active {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-grey-light-1;
+    transition: $primary-transition;
+    @include btnStyling;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-.2rem);
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 1rem auto;
+    overflow: hidden
+  }
+  &__card {
+    flex-basis: 31%;
+    flex-shrink: 0;
+    text-align: center;
+    border-radius: .2rem;
+    box-shadow: $box-shadow;
+    color: $color-black;
+    background: $color-white;
+    transition: $sec-transition;
+    margin: 0 .7rem;
+    padding: .5rem;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover &-img {
+      transform: scale(1);
+    }
+    &:hover &-listitem {
+      opacity: 1;
+    }
+    &:hover &-figure {
+      &::before {
+        width: 100%;
+      }
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  &__card-figure {
+    position: relative;
+    overflow: hidden;
+    height: 32vh;
+    width: 100%;
+    margin-bottom: 1rem;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 50%;
+      top: 0;
+      left: 0;
+      background: rgba($color-secondary, .7);
+      z-index: 2000;
+      transition: $sec-transition;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      width: 0%;
+      height: 50%;
+      bottom: 0;
+      right: 0;
+      background: rgba($color-secondary, .7);
+      z-index: 2000;
+      transition: $sec-transition;
+    }
+  }
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: $sec-transition;
+    transform: scale(1.2);
+  }
+  &__card-list {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    width: 100%;
+    z-index: 3000;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  &__card-listitem {
+    height: 1.2rem;
+    width: 1.2rem;
+    position: relative;
+    margin: 0 1.5rem;
+    padding: 1.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    transition: $primary-transition;
+    background: $color-black;
+    border-radius: 50%;
+    opacity: 0;
+    &:hover {
+      background: linear-gradient(to right bottom, rgba(45, 52, 54, 1), rgba(44, 62, 80, .9));
+    }
+  }
+  &__card-icon {
+    margin: 0 auto;
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: $color-white;
+    transform: translateX(-.5rem) translateY(-.5rem);
+  }
+  &__card-header {
+    text-transform: uppercase;
+  }
+  &__card-category {
+    color: $color-secondary;
+    margin-bottom: 1.5rem;
+  }
+}

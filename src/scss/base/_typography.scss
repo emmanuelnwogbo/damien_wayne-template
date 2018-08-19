@@ -56,6 +56,30 @@ body {
   }
 }
 
+.portfolio {
+  &__header {
+    font-size: 240%;
+    font-weight: 500;
+    &-sub {
+      font-size: 140%;
+      font-weight: 400;
+    }
+  }
+  &__categories-link,
+  &__categories-link:link,
+  &__categories-link:visited,
+  &__categories-link:active {
+    font-size: 80%;
+    font-weight: 500;
+  }
+  &__card-header {
+    font-weight: 700;
+  }
+  &__card-category {
+    font-size: 90%;
+  }
+}
+
 .blog {
   &__header {
     font-size: 240%;
@@ -87,8 +111,14 @@ body {
   }
   &__form-input {
     font-size: .8rem;
+    &::-webkit-input-placeholder {
+      font-weight: 700;
+    }
   }
   &__form-textarea {
     font-size: .8rem;
+    &::-webkit-input-placeholder {
+      font-weight: 700;
+    }
   }
 }
