@@ -81,8 +81,9 @@
     color: $color-black;
     background: $color-white;
     transition: $sec-transition;
-    margin: 0 .7rem;
+    margin: 1rem .7rem;
     padding: .5rem;
+    backface-visibility: hidden;
     &:hover {
       cursor: pointer;
     }
@@ -178,5 +179,21 @@
   &__card-category {
     color: $color-secondary;
     margin-bottom: 1.5rem;
+  }
+  &__navigation {}
+  &__navigation-list {
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  &__navigation-listitem {
+    padding: .3rem;
+    border: 3px solid $color-grey-light-1;
+    border-radius: 50%;
+    background: transparent;
+    margin: 0 .5rem;
+    cursor: pointer;
   }
 }
