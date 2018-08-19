@@ -110,15 +110,17 @@ body {
     font-weight: 500;
   }
   &__form-input {
-    font-size: .8rem;
+    font-size: 1rem;
     &::-webkit-input-placeholder {
       font-weight: 700;
+      font-size: .8rem;
     }
   }
   &__form-textarea {
-    font-size: .8rem;
+    font-size: 1rem;
     &::-webkit-input-placeholder {
       font-weight: 700;
+      font-size: .8rem;
     }
   }
 }
