@@ -32,6 +32,10 @@
       width: 70%;
       text-align: center;
       margin: 0 auto;
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        padding: 0 .5rem;
+      }
     }
   }
   &__categories {
@@ -50,6 +54,12 @@
     text-transform: uppercase;
     text-align: center;
     transition: $primary-transition;
+    @media only screen and (max-width: 600px) {
+      margin: 0 .5rem;
+    }
+    @media only screen and (max-width: 480px) {
+      margin: 0 .4rem;
+    }
   }
   &__categories-link,
   &__categories-link:link,
@@ -60,6 +70,9 @@
     color: $color-grey-light-1;
     transition: $primary-transition;
     @include btnStyling;
+    @media only screen and (max-width: 480px) {
+      padding: .5rem .7rem;
+    }
     &:hover {
       cursor: pointer;
       transform: translateY(-.2rem);
@@ -70,7 +83,11 @@
     justify-content: space-between;
     width: 70%;
     margin: 1rem auto;
-    overflow: hidden
+    overflow: hidden;
+    @media only screen and (max-width: 1024px) {
+      width: 90%;
+      justify-content: space-evenly;
+    }
   }
   &__card {
     flex-basis: 31%;
@@ -84,6 +101,16 @@
     margin: 1rem .7rem;
     padding: .5rem;
     backface-visibility: hidden;
+    @media only screen and (max-width: 1024px) {
+      flex-basis: 64%; //margin: 1rem 7rem;
+      transform: translateX(312%);
+    }
+    @media only screen and (max-width: 600px) {
+      flex-basis: 74%;
+    }
+    @media only screen and (max-width: 480px) {
+      flex-basis: 85%
+    }
     &:hover {
       cursor: pointer;
     }
@@ -190,10 +217,12 @@
   }
   &__navigation-listitem {
     padding: .3rem;
-    border: 3px solid $color-grey-light-1;
+    border: 2px solid $color-grey-light-1;
     border-radius: 50%;
     background: transparent;
     margin: 0 .5rem;
     cursor: pointer;
+    transition: $sec-transition;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
   }
 }

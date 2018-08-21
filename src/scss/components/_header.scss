@@ -41,6 +41,10 @@
     display: flex;
     list-style: none;
     z-index: 9500;
+    @media only screen and (max-width: 800px) {
+      display: none;
+      visibility: hidden;
+    }
   }
   &__list-item {
     position: relative;
@@ -94,11 +98,100 @@
     color: $color-grey-light-1;
     transition: $primary-transition;
   }
+  &__sidenav-checkbox {
+    position: absolute;
+    top: 0;
+    right: 15%;
+  }
+  &__sidenav-checkbox:checked~&__sidenav {
+    transform: translateX(0)
+  }
+  &__sidenav-icon {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 2%;
+    list-style: none;
+    z-index: 8000;
+    width: 4rem;
+    height: 4rem;
+    @media only screen and (max-width: 800px) {
+      display: block;
+    }
+    @media only screen and (max-width: 480px) {
+      width: 2.5rem;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: 30%;
+      left: 0;
+      width: 70%;
+      height: 4%;
+      display: inline-block;
+      transition: $primary-transition;
+      background: $color-grey-light-1;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 50%;
+      right: 0;
+      width: 90%;
+      height: 4%;
+      display: inline-block;
+      transition: $primary-transition;
+      background: $color-grey-light-1;
+    }
+  }
+  &__sidenav {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    z-index: 9500;
+    transition: $primary-transition;
+    transform: translateX(100%);
+    @media only screen and (max-width: 800px) {
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+      padding: 4rem 0;
+      background: linear-gradient(to right bottom, rgba(#5E35B1, 1), rgba(#5E35B1, .9));
+      width: 50%;
+      height: 100%;
+      position: fixed;
+    }
+  }
+  &__sidenav-item {
+    align-self: center;
+    position: relative;
+    margin: 0 2rem;
+    padding: 1.5rem 0;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    transition: $primary-transition;
+  }
+  &__sidenav-link,
+  &__sidenav-link:link,
+  &__sidenav-link:visited,
+  &__sidenav-link:active {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-grey-light-1;
+    transition: $primary-transition;
+  }
   &__intro {
     align-self: center;
     text-align: center;
     margin-top: 13rem;
     transition: $sec-transition;
+    @media only screen and (max-width: 320px) {
+      margin-top: 10rem;
+    }
   }
   &__intro-photo {
     position: relative;
@@ -120,6 +213,12 @@
     width: 30%;
     margin: 0 auto;
     transform: translateX(1.2rem);
+    @media only screen and (max-width: 600px) {
+      transform: translateX(-1rem);
+    }
+    @media only screen and (max-width: 320px) {
+      transform: translateX(-3rem);
+    }
   }
   &__intro-icon {
     fill: $color-grey-light-1;

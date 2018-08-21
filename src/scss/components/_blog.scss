@@ -43,6 +43,14 @@
     width: 70%;
     margin: 1rem auto;
     overflow: hidden;
+    @media only screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media only screen and (max-width: 480px) {
+      width: 80%;
+      justify-content: center;
+    }
   }
   &__card {
     flex-basis: 32%;
@@ -54,6 +62,18 @@
     background: $color-white;
     box-shadow: $box-shadow;
     cursor: pointer;
+    @media only screen and (max-width: 1024px) {
+      flex-basis: 80%;
+      margin: 1rem 0;
+    }
+    @media only screen and (max-width: 600px) {
+      flex-basis: 95%;
+      margin: 1rem 0;
+    }
+    @media only screen and (max-width: 480px) {
+      flex-basis: 100%;
+      margin: 1rem 0;
+    }
   }
   &__card-figure {
     overflow: hidden;

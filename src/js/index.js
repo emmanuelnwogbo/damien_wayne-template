@@ -3,9 +3,19 @@ const portfolioCards = document.getElementsByClassName('portfolio__card');
 const portfolioCardsArr = Array.from(portfolioCards);
 const portfolioCardsArrLength = portfolioCardsArr.length;
 const portfolioNavList = document.getElementById('portfolio__navigation-list');
+const sideNavIcon = document.getElementById('header__sidenav-icon');
+const sideNavCheck = document.getElementById('header__sidenav-checkbox');
+const container = document.getElementById('container');
 let portfolioNavListItems;
-
 //console.log(portfolioCardsArrLength);
+
+sideNavIcon.addEventListener('click', function () {
+  sideNavCheck.checked = true;
+})
+
+container.addEventListener('click', function () {
+  sideNavCheck.checked = false;
+})
 
 function portfolioSlider() {
   let arr = [];
