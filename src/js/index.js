@@ -17,8 +17,23 @@ container.addEventListener('click', function () {
   sideNavCheck.checked = false;
 })
 
-function portfolioSlider() {
+function renderPortfolioSliderNav() {
   let arr = [];
+  let navItemIdCount = 1;
+  if (window.matchMedia('(max-width: 1024px)').matches) {
+    return portfolioCardsArr.forEach(card => {
+      const portListItem = document.createElement('li')
+      portListItem.classList.add('portfolio__navigation-listitem');
+      portListItem.id = `portfolio__navigation-listitem-${navItemIdCount++}`;
+      //console.log(navItemIdCount, portListItem)
+      if (navItemIdCount === 2) {
+        portListItem.style.background = '#c7ecee'
+        console.log('hello')
+      }
+      portfolioNavList.appendChild(portListItem);
+    })
+  }
+
   if (portfolioCardsArrLength < 4) {
     return null;
   }
@@ -31,7 +46,7 @@ function portfolioSlider() {
       if (i === 1) {
         portListItem.style.background = '#c7ecee'
       }
-      console.log(portListItem)
+      //console.log(portListItem)
       portfolioNavList.appendChild(portListItem);
     })
   }
@@ -49,33 +64,59 @@ function portfolioSlider() {
   }
 }
 
-portfolioSlider();
-portfolioNavListItems = document.getElementsByClassName('portfolio__navigation-listitem');
-const portfolioNavListItemsArr = Array.from(portfolioNavListItems);
+renderPortfolioSliderNav();
+navigatePortfolioItems();
 
-Array.from(portfolioNavListItems, item => {
-  item.addEventListener('click', function () {
-    portfolioNavListItemsArr.forEach(item => {
-      if (item.id !== this.id) {
-        item.style.background = 'transparent';
-      } else {
-        item.style.background = '#c7ecee';
+function navigatePortfolioItems() {
+  portfolioNavListItems = document.getElementsByClassName('portfolio__navigation-listitem');
+  const portfolioNavListItemsArr = Array.from(portfolioNavListItems);
+  const noOfCards = [1, 2, 3, 4, 5, 6, 7];
+  if (window.matchMedia('(max-width: 1024px)').matches) {
+    return Array.from(portfolioNavListItems, item => {
+      item.addEventListener('click', function () {
+        portfolioNavListItemsArr.forEach(item => {
+          if (item.id !== this.id) {
+            item.style.background = 'transparent';
+          } else {
+            item.style.background = '#c7ecee';
+          }
+        });
+
+        noOfCards.forEach(num => {
+          if (this.id === `portfolio__navigation-listitem-${num}`) {
+            let val = (num * 100);
+
+          }
+        })
+      })
+    })
+
+  }
+
+  Array.from(portfolioNavListItems, item => {
+    item.addEventListener('click', function () {
+      portfolioNavListItemsArr.forEach(item => {
+        if (item.id !== this.id) {
+          item.style.background = 'transparent';
+        } else {
+          item.style.background = '#c7ecee';
+        }
+      });
+      if (this.id === 'portfolio__navigation-listitem-1') {
+        portfolioCardsArr.forEach(card => {
+          card.style.transform = 'translateX(0)';
+        })
+      }
+      if (this.id === 'portfolio__navigation-listitem-2') {
+        portfolioCardsArr.forEach(card => {
+          card.style.transform = 'translateX(-315%)';
+        })
+      }
+      if (this.id === 'portfolio__navigation-listitem-3') {
+        portfolioCardsArr.forEach(card => {
+          card.style.transform = 'translateX(-635%)';
+        })
       }
     })
-    if (this.id === 'portfolio__navigation-listitem-1') {
-      portfolioCardsArr.forEach(card => {
-        card.style.transform = 'translateX(0)';
-      })
-    }
-    if (this.id === 'portfolio__navigation-listitem-2') {
-      portfolioCardsArr.forEach(card => {
-        card.style.transform = 'translateX(-315%)';
-      })
-    }
-    if (this.id === 'portfolio__navigation-listitem-3') {
-      portfolioCardsArr.forEach(card => {
-        card.style.transform = 'translateX(-635%)';
-      })
-    }
-  })
-});
+  });
+}

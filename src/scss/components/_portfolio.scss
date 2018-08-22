@@ -85,8 +85,11 @@
     margin: 1rem auto;
     overflow: hidden;
     @media only screen and (max-width: 1024px) {
-      width: 90%;
+      position: relative;
+      width: 95%;
       justify-content: space-evenly;
+      transition: all ease-in 1s;
+      overflow: visible;
     }
   }
   &__card {
@@ -102,7 +105,7 @@
     padding: .5rem;
     backface-visibility: hidden;
     @media only screen and (max-width: 1024px) {
-      flex-basis: 64%; //margin: 1rem 7rem;
+      flex-basis: 64%;
       transform: translateX(312%);
     }
     @media only screen and (max-width: 600px) {
@@ -224,5 +227,8 @@
     cursor: pointer;
     transition: $sec-transition;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    @media only screen and (max-width: 1024px) {
+      margin: 0 1.5rem;
+    }
   }
 }

@@ -19,6 +19,9 @@ body {
     @media only screen and (max-width: 480px) {
       font-size: 250%;
     }
+    @media only screen and (max-width: 320px) {
+      font-size: 200%;
+    }
   }
   &__intro-about {
     font-size: 125%;
@@ -28,6 +31,9 @@ body {
     }
     @media only screen and (max-width: 480px) {
       font-size: 80%;
+    }
+    @media only screen and (max-width: 320px) {
+      font-size: 70%;
     }
   }
   &__list-link,
